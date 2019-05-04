@@ -3,7 +3,6 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router'
-import Axios from 'axios';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -37,8 +36,6 @@ import BPopover from '../node_modules/bootstrap-vue/es/components/popover/popove
 
 Vue.config.productionTip = false;
 library.add(faPen);
-
-Vue.prototype.$http = Axios;
 
 Vue.component('b-carousel', BCarousel);
 Vue.component('b-carousel-slide', BCarouselSlide);
