@@ -5,6 +5,7 @@
             class="app-signup-header">Sign up to your system</p>
         <input class = "app-signup-info" type="text" placeholder="E-mail" v-model="email">
         <input class = "app-signup-info" type="password" placeholder="Password" v-model="password">
+        <input class = "app-signup-info" type="password" placeholder="Confirm Password" v-model="confirmpassword">
         <button class="app-signup-button" type="submit" @click="signup">Sign Up</button>
         <p class="app-signup-header"><router-link class="app-sign-up-link" to="/login">Already have the account</router-link></p>
     </form>
@@ -23,12 +24,14 @@ export default {
     },
     methods: {
         signup: function() {
-            firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-                this.$router.replace('home'), 
-                (err) => {
-                    alert('Oops. ' + err.message)
-                }
-            );
+            if(this.password === this.confirmpassword) {
+                firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+                    this.$router.replace('home'), 
+                    (err) => {
+                        alert('Oops. ' + err.message)
+                    }
+                );
+            }
         }
     }
 }
