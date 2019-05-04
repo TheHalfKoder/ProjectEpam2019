@@ -1,64 +1,71 @@
 <template>
-    <div class="container">
-        <div class="google-map" :id="name"></div>
-    </div>
+    <div class="google-map" id="map"></div>
 </template>
 
 <script>
-    export default {
-        name: 'google-map',
-        props: ['name'],
-        data: function () {
-            return {
-                map: '',
-                markers: [
-                    {
-                        position: {
-                            latitude: 59.93,
-                            longitude: 30.32
-                        }
-                    },
-                    {
-                        position: {
-                            latitude: 59.928,
-                            longitude: 30.32
-                        }
-                    }
-                ]
-            }
-        },
-        computed: {
-            mapMarkers: function () {
-                return this.markers
-            }
-        },
-        mounted: function () {
-            /*eslint-disable */
-            const element = document.getElementById(this.name)
-            const options = {
-                zoom: 14,
-                center: new google.maps.LatLng(59.93, 30.32)
-            }
-            this.map = new google.maps.Map(element, options)
+	let isAlreadyLoaded = false;
 
-            this.markers.forEach((marker) => {
-                const position = new google.maps.LatLng(marker.position.latitude, marker.position.longitude)
-                marker.map = this.map
-                marker.position = position
-                new google.maps.Marker(marker)
-            })
-            /*eslint-enable */
-        },
-        methods: {
-        }
-    }
+	export default {
+		name: "google-map",
+		props: {
+			key111: {
+				type: String,
+				required: true
+			}
+		},
+		data() {
+			return {
+				onLoadLn: null,
+				scriptEl: null
+			};
+		},
+		created() {
+			this.onLoadLn = this.applyMap.bind(this);
+		},
+		destroyed() {
+			if (this.scriptEl) {
+				this.scriptEl.removeEventListener("load", this.onLoadLn);
+			}
+		},
+		mounted() {
+			if (isAlreadyLoaded) {
+				this.applyMap();
+				return;
+			} else {
+				this.scriptEl = document.createElement("script");
+				this.scriptEl.type = 'text/javascript';
+				this.scriptEl.src = `https://maps.googleapis.com/maps/api/js?key=${this.key111}`;
+				this.scriptEl.addEventListener("load", this.onLoadLn);
+				document.head.appendChild(this.scriptEl);
+			}
+		},
+		methods: {
+			applyMap() {
+				const {google} = window;
+				const center = {
+					lat: 50.4495911,
+					lng: 30.4559864
+				};
+				const map = new google.maps.Map(document.getElementById('map'), {
+					center,
+					scrollwheel: false,
+					zoom: 17
+				});
+				const marker = new google.maps.Marker({
+					position: center,
+					map,
+					title: 'We are here!'
+				});
+
+				isAlreadyLoaded = true;
+			}
+		}
+	};
 </script>
 
 <style scoped>
     .google-map {
-        width: 640px;
-        height: 480px;
-        margin: 0 auto;
-        background: gray;
+        width: 100%;
+        height: 500px;
     }
 </style>

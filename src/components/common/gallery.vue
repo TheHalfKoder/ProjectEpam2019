@@ -45,23 +45,23 @@ export default {
   }
 
   .app-gallery:nth-of-type(1) .app-gallery-image {
-    background-image: url('../../images/kyiv.jpg');
+    background-image: url('../../assets/images/kyiv.jpg');
   }
 
   .app-gallery:nth-of-type(2) .app-gallery-image {
-    background-image: url('../../images/kyiv1.jpg');
+    background-image: url('../../assets/images/kyiv1.jpg');
   }
 
   .app-gallery:nth-of-type(3) .app-gallery-image {
-    background-image: url('../../images/kyiv2.jpg');
+    background-image: url('../../assets/images/kyiv2.jpg');
   }
 
   .app-gallery:nth-of-type(4) .app-gallery-image {
-    background-image: url('../../images/kyiv3.jpg');
+    background-image: url('../../assets/images/kyiv3.jpg');
   }
 
   .app-gallery:nth-of-type(5) .app-gallery-image {
-    background-image: url('../../images/kyiv4.jpg');
+    background-image: url('../../assets/images/kyiv4.jpg');
   }
 
   @media screen and (max-width: 900px){

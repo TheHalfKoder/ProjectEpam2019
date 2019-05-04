@@ -32,10 +32,6 @@ export default {
 </script>
 
 <style scoped>
-  .app-navigation {
-    margin-left: 70%;
-  }
-
   .app-navigation-wrapper {
     width: 500px;
     height: 50px;
@@ -51,7 +47,7 @@ export default {
 
     height: 50px;
     text-align: center;
-    flex: 1 0 0;
+    flex: 1 0 auto;
     justify-items: center;
     position: relative;
     background-color: #fff;

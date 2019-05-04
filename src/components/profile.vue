@@ -2,24 +2,39 @@
   <div class="app-profile">
     <content class="app-profile-content">
       <aside class="app-profile-aside">
-        <img alt="Your photo" src="../images/myPhoto.jpg" class="app-profile-aside-image">
-        <input type="submit" value="Upload new" class="app-profile-aside-button">
-        <button class="app-profile-aside-button" type="submit" @click="logout">Log out</button>
+        <img alt="Your photo" src="../assets/images/myPhoto.jpg" class="app-profile-aside-image">
+        <div class="app-profile-btn-wrapper">
+          <button class="app-btn app-btn--secondary app-profile-btn">Upload New</button>
+        </div>
+        <div class="app-profile-btn-wrapper">
+          <button class="app-btn app-btn--secondary app-profile-btn" @click="logout">Log out</button>
+        </div>
       </aside>
       <section class="app-profile-section">
         <form class="app-profile-form">
-          <label v-for="item in infoItem"
-               :key="item.key"
-               :text="item.text"
-               :for="item.for"
-               class="app-profile-label">{{item.text}}
-               <editable-text :id="item.for" 
-                              class="app-profile-fields"
-                              :value="model" 
-                              @changed="valueChanged"
-                              ></editable-text>
+          <label class="app-profile-field">
+            Full Name
+            <input class="app-form-input app-profile-field-input"/>
           </label>
-          <input class="app-profile-save" type="submit" value="Save">
+          <label class="app-profile-field">
+            Date of Birth
+            <input class="app-form-input app-profile-field-input"/>
+          </label>
+          <label class="app-profile-field">
+            University
+            <input class="app-form-input app-profile-field-input"/>
+          </label>
+          <label class="app-profile-field">
+            Position
+            <input class="app-form-input app-profile-field-input"/>
+          </label>
+          <label class="app-profile-field">
+            Phone Number
+            <input class="app-form-input app-profile-field-input"/>
+          </label>
+          <p class="app-profile-save-btn-wrapper">
+            <button class="app-btn app-btn--success app-profile-save">Save</button>
+          </p>
         </form>
       </section>
     </content>
@@ -74,44 +89,33 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  .app-profile {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
   .app-profile-content {
     width: 100%;
     display: flex;
-    flex: 1 0 0;
-    border: 1px solid #dfdfdf;
-    border-radius: 0.25rem;
+    flex: 1 0 auto;
   }
 
   .app-profile-aside {
     width: 30%;
-    height: 500px;
-    background-color: #f7f7f7;;
   }
 
-  .app-profile-aside-button {
-    width: 50%;
-    height: 40px;
-    background-color: #fff;
-    border: 1px solid #959595;
-    outline: none;
-    border-radius: 5px;
-    margin-left: 25%;
-    color: #959595;
-    margin-top: 10%;
+  .app-profile-btn-wrapper {
+    margin-top: 10px;
   }
 
-  .app-profile-aside-button:hover {
-    color: #01AFB0;
-    border: 1px solid #01AFB0;
-    transition: 0.5s;
+  .app-profile-btn {
+    width: 50% !important;
   }
 
   .app-profile-aside-image {
-    width: 70%;
-    height: 40%;
-    margin-left: 15%;
-    margin-top: 10%;
+    width: 100%;
   }
 
   .app-profile-section {
@@ -120,42 +124,27 @@ export default {
 
   .app-profile-form {
     display: flex;
-    width: 90%;
     flex-direction: column;
     justify-self: center;
-    margin-left: 5%;
-    margin-top: 10%;
+    box-sizing: border-box;
+    padding: 0 15px;
   }
 
-  .app-profile-label {
-    width: 100%;
-    height: 60px;
-    position: relative;
-    color: #959595;
+  .app-profile-field {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    white-space: nowrap;
+
+    .app-profile-field-input {
+      width: 300px;
+      margin-left: 15px;
+    }
   }
 
-  .app-profile-fields {
-    position: absolute;
-    right: 0;
-  }
-
-  .app-profile-save {
+  .app-profile-save-btn-wrapper {
     width: 30%;
-    margin-left: 35%;
-    margin-top: 5%;
-    background-color: #fff;
-    border: 1px solid #959595;
-    border-radius: 5px;
-    outline: none;
-    height: 40px;
-    color: #959595;
-  }
-
-  .app-profile-save:hover {
-    border: 1px solid #01AFB0;
-    background-color: #01AFB0;
-    color: #fff;
-    transition: 0.5s;
+    text-align: center;
   }
 
   .app-profile-skills-header {
@@ -165,21 +154,5 @@ export default {
     margin-top: 30px;
     margin-bottom: 30px;
     color: #959595;
-  }
-
-  .nav-pills .nav-link.active {
-    background-color: #F38524;
-  }
-
-  .nav-pills .nav-link.active:hover {
-    color: #fff;
-  }
-
-  .nav-pills .nav-link {
-    color: #959595;
-  }
-
-  .nav-pills .nav-link:hover {
-    color: #01AFB0;
   }
 </style>

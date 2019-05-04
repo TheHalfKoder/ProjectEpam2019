@@ -30,7 +30,9 @@
       
     >
       <template slot="name" slot-scope="row" >
-        <b-button @click="modalShow = !modalShow">{{ row.value.first }} {{ row.value.last }}</b-button>
+        <button class="app-btn app-btn--primary" @click="modalShow = !modalShow">
+          {{ row.value.first }} {{ row.value.last }}
+        </button>
         <b-modal v-model="modalShow">
           <p>Skills</p>
         </b-modal>

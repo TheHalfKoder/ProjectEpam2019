@@ -1,69 +1,57 @@
 <template>
     <div class="app-side-bar">
-        <b-card no-body>
+        <form class="app-side-form">
             <b-tabs pills card vertical end class="app-side-bar-menu">
                 <b-tab title="Frontend" active class="app-tabs">
                     <b-card class="app-profile-card">
-                        <form class="app-side-form">
-                            <div v-for="item in itemMenuFront"
-                             :key="item.id"
-                             class="app-side-bar-card">
-                                <label :for="item.for"
-                                    class="app-side-bar-label">{{item.text}}</label>
-                                <b-form-input :id="item.for" 
-                                            v-model="item.value" 
-                                            type="range" 
-                                            min="0" 
-                                            max="100" 
-                                            step="1"></b-form-input>
-                                <div class="mt-2">Value: {{ item.value }}</div>
-                            </div>
-                            <input type="submit" value="Save" class="app-side-save-button">
-                        </form>
+                        <div v-for="item in itemMenuFront" :key="item.id" class="app-side-bar-card">
+                            <label :for="item.for"
+                                   class="app-side-bar-label">{{item.text}}</label>
+                            <b-form-input :id="item.for"
+                                          v-model="item.value"
+                                          type="range"
+                                          min="0"
+                                          max="100"
+                                          step="1"></b-form-input>
+                            <div class="mt-2">Value: {{ item.value }}</div>
+                        </div>
                     </b-card>
                 </b-tab>
                 <b-tab title="Backend">
                     <b-card class="app-profile-card">
-                        <form class="app-side-form">
-                            <div v-for="item in itemMenuBack"
-                             :key="item.id"
-                             class="app-side-bar-card">
-                                <label :for="item.for"
-                                    class="app-side-bar-label">{{item.text}}</label>
-                                <b-form-input :id="item.for" 
-                                            v-model="item.value" 
-                                            type="range" 
-                                            min="0" 
-                                            max="100" 
-                                            step="1"></b-form-input>
-                                <div class="mt-2">Value: {{ item.value }}</div>
-                            </div>
-                            <input type="submit" value="Save" class="app-side-save-button">
-                        </form>
+                        <div v-for="item in itemMenuBack" :key="item.id" class="app-side-bar-card">
+                            <label :for="item.for"
+                                   class="app-side-bar-label">{{item.text}}</label>
+                            <b-form-input :id="item.for"
+                                          v-model="item.value"
+                                          type="range"
+                                          min="0"
+                                          max="100"
+                                          step="1"></b-form-input>
+                            <div class="mt-2">Value: {{ item.value }}</div>
+                        </div>
                     </b-card>
                 </b-tab>
                 <b-tab title="Data Bases">
                     <b-card class="app-profile-card">
-                        <form class="app-side-form">
-                            <div v-for="item in itemMenuData"
-                             :key="item.id"
-                             class="app-side-bar-card">
-                                <label :for="item.for"
-                                    class="app-side-bar-label">{{item.text}}</label>
-                                <b-form-input :id="item.for" 
-                                            v-model="item.value" 
-                                            type="range" 
-                                            min="0" 
-                                            max="100" 
-                                            step="1"></b-form-input>
-                                <div class="mt-2">Value: {{ item.value }}</div>
-                            </div>
-                            <input type="submit" value="Save" class="app-side-save-button">
-                        </form>
+                        <div v-for="item in itemMenuData" :key="item.id" class="app-side-bar-card">
+                            <label :for="item.for"
+                                   class="app-side-bar-label">{{item.text}}</label>
+                            <b-form-input :id="item.for"
+                                          v-model="item.value"
+                                          type="range"
+                                          min="0"
+                                          max="100"
+                                          step="1"></b-form-input>
+                            <div class="mt-2">Value: {{ item.value }}</div>
+                        </div>
                     </b-card>
                 </b-tab>
             </b-tabs>
-        </b-card>
+            <p class="app-categories-save-btn-wrapper">
+                <button class="app-btn app-btn--success app-side-save-button">Save</button>
+            </p>
+        </form>
     </div>
 </template>
 
@@ -163,22 +151,8 @@ export default {
         color: #959595;
     }
 
-    .app-side-save-button {
-        width: 150px;
-        margin-top: 30px;
-        background-color: #fff;
-        border: 1px solid #959595;
-        border-radius: 5px;
-        outline: none;
-        height: 40px;
-        color: #959595;
-    }
-
-    .app-side-save-button:hover {
-        border: 1px solid #01AFB0;
-        background-color: #01AFB0;
-        color: #fff;
-        transition: 0.5s;
+    .app-categories-save-btn-wrapper {
+        width: 30%;
     }
 </style>
 

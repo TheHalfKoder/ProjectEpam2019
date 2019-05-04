@@ -1,15 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import firebase from 'firebase'
-import home from '@/components/home'
-import contacts from '@/components/contacts'
-import employee from '@/components/employee'
-import profile from '@/components/profile'
-import SignIn from '@/components/SignIn'
-import SignUp from '@/components/SignUp'
+import Vue from 'vue';
+import Router from 'vue-router';
+import firebase from 'firebase';
+import home from './components/home';
+import contacts from './components/contacts';
+import employee from './components/employee';
+import profile from './components/profile';
+import SignIn from './components/sign-in';
+import SignUp from './components/sign-up';
 
-
-Vue.use(Router)
+Vue.use(Router);
 let router = new Router({
   routes: [
     {
@@ -31,7 +30,7 @@ let router = new Router({
       name: 'SignUp',
       meta: {
         title: 'Sign Up',
-
+        
       },
       component: SignUp
     },
@@ -77,7 +76,7 @@ let router = new Router({
 router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-
+  
   if (requiresAuth && !currentUser) next('login');
   else if (!requiresAuth && currentUser) next('home');
   else next();

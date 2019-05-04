@@ -1,0 +1,49 @@
+@import "variables";
+@import "mixins";
+@import "components/components";
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+html, body,
+.app-main {
+  height: 100%;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header-wrapper,
+.app-content-wrapper,
+.app-footer-wrapper {
+  padding: 0 5%;
+}
+
+.app-header-wrapper {
+  height: $headerHeight;
+}
+
+.app-content-wrapper {
+  flex: 1;
+  height: calc(100% - #{$headerHeight} - #{$footerHeight});
+  overflow: hidden;
+
+  .app-content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.app-footer-wrapper {
+  height: $footerHeight;
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 15px 4px #ffffff;
+  box-shadow: 0px 0px 15px 4px #ffffff;
+}

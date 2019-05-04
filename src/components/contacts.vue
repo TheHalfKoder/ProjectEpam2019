@@ -1,23 +1,23 @@
 <template>
-  <div>
+  <div class="app-contacts">
     <gallery></gallery>
     <div class="app-contacts-line"></div>
     <section class="app-contacts-map-wrapper">
       <p class="app-contacts-map-paragraph">Find us</p>
-      <div class="app-map-wrapper" id="map"></div>
+      <div class="app-map-wrapper">
+        <google-map key111="AIzaSyBQnEOhZMd6BpSMRV13246gEDdI75gKBLc"></google-map>
+      </div>
     </section>
-    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import AppFooter from './common/footer';
-import Gallery from './common/gallery';
+  import Gallery from './common/gallery';
+  import GoogleMap from './common/google-map';
+
   export default {
     name: 'contacts',
-    components: {
-      AppFooter, Gallery
-    },
+    components: {Gallery, GoogleMap},
     data () {
       return {
         title: "Contacts",
@@ -32,25 +32,15 @@ import Gallery from './common/gallery';
       }
     },
     mounted() {
-      const center = {
-        lat: 50.4495911,
-        lng: 30.4559864
-      };
-      const map = new google.maps.Map(document.getElementById('map'), {
-        center,
-        scrollwheel: false,
-        zoom: 17
-      });
-      const marker = new google.maps.Marker({
-        position: center,
-        map,
-        title: 'We are here!'
-      });
+
     }
   }
 </script>
 
 <style scoped>
+  .app-contacts {
+    width: 100%;
+  }
 
   .app-contacts-line {
     width: 20%;

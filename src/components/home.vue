@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="app-home-wrapper">
         <carousel></carousel>
         <section>
             <p class="app-home-page-content-header">The most popular specialists in our service</p>
@@ -23,13 +23,12 @@
                     </div>
             </section>
         </section>
-        <app-footer/>
     </div>
 </template>
 
 <script>
 import Carousel from "./common/carousel";
-import AppFooter from './common/footer';
+import AppFooter from './common/app-footer';
 
 export default {
     name: "home",
@@ -87,6 +86,12 @@ export default {
 </script>
 
 <style>
+    .app-home-wrapper {
+        height: 500px;
+        max-height: 500px;
+        width: 70%;
+    }
+
     .app-home-page-content {
         display: flex;
         flex-direction: column;
@@ -98,15 +103,6 @@ export default {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 2em;
         margin-top: 20px;
-    }
-
-    .app-home-page-card {
-        grid-area: ".app-home-page-card";
-        background-color: #fff;
-    }
-
-    .app-home-page-card-text {
-        text-align: center;
     }
 
     .app-card-row {

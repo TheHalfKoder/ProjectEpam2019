@@ -21,7 +21,9 @@ export default {
 </script>
 
 <style scoped>
-  
+  .app-employee {
+    flex: 1 0 auto;
+  }
 </style>
 
 
