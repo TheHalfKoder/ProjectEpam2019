@@ -29,28 +29,3 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-## Required Modules
-``` bash
-1. Axios
-# npm install--save axios
-
-2. FontAwasome
-# npm install @fortawesome/free-solid-svg-icons
-# npm install @fortawasome/vue-fontawesome
-# npm install @fortawasome/fontawesome-svg-core
-
-3. Hooper (Gallery component)
-# npm install hooper
-
-4. Firebase
-# npm install --save firebase
-
-5. Bootstrap
-# npm install bootstrap
-
-6. Bootstrap-vue
-# npm install bootstrap-vue
-
-7. JQuery
-# npm install jquery
-````
