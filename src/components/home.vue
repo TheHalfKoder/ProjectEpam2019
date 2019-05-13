@@ -20,7 +20,7 @@
                                 {{ item.position }}
                             </span>
                         </div>
-                    </div>
+                </div>
             </section>
         </section>
     </div>
@@ -139,5 +139,79 @@ export default {
         flex: 1 0 auto;
         text-align: center;
         padding: 0 1em;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+        .app-card-row {
+            flex-direction: column;
+        }
+
+        .app-card-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
+
+        .app-card-item-text {
+            font-size: 1.5em;
+        }
+    }
+
+    @media screen and (min-width: 420px) and (max-width: 768px) {
+        .app-card-row {
+            flex-direction: column;
+        }
+
+        .app-card-item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+        }
+
+        .app-home-wrapper {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 420px) {
+        .app-card-row {
+            flex-direction: column;
+        }
+
+        .app-card-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .app-card-item-img-wrapper {
+            border: none;
+            border-radius: 0;
+            width: 100%;
+        }
+
+        .app-home-wrapper {
+            width: 100%;
+        }
+
+        .app-card-item-img-container {
+            width: 100%;
+        }
+
+        .app-card-item-img-wrapper {
+            height: 250px;
+        }
+
+        .app-card-item-img {
+            width: 100%;
+            height: 270px;
+        }
+
+        .app-home-page-content {
+            margin-bottom: 70px;
+        }
     }
 </style>

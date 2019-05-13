@@ -15,7 +15,7 @@
     </b-row>
 
     <!-- Main table element -->
-    <b-table
+    <b-table class="app-table-wrapper"
       hover
       show-empty
       stacked="md"
@@ -30,7 +30,7 @@
       
     >
       <template slot="name" slot-scope="row" >
-        <button class="app-btn app-btn--primary" @click="modalShow = !modalShow">
+        <button class="app-btn app-btn--primary app-btn-employee" @click="modalShow = !modalShow">
           {{ row.value.first }} {{ row.value.last }}
         </button>
         <b-modal v-model="modalShow">
@@ -73,7 +73,7 @@ import { parse } from 'querystring';
         items: [
           { 
             dateBirth: '15.10.1997', name: { first: 'Dickerson', last: 'Macdonald' }, position: 'Middle',
-            phone: '+38(093)8467812', id: 'nameId'
+            phone: '+38(093)8467812'
           },
           { 
             dateBirth: '01.06.1987', name: { first: 'Larsen', last: 'Shaw' }, position: 'Junior',
@@ -128,6 +128,102 @@ import { parse } from 'querystring';
             phone: '+38(095)0912345'
           },
           {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Brown'}, position: 'Senior',
+            phone: '+38(068)9123761'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
+            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            phone: '+38(068)9123768'
+          },
+          {
             dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
             phone: '+38(068)9123768'
           }
@@ -148,8 +244,8 @@ import { parse } from 'querystring';
         ],
         totalRows: 1,
         currentPage: 1,
-        perPage: 7,
-        pageOptions: [7, 14],
+        perPage: 15,
+        pageOptions: [15, 30],
         sortBy: null,
         sortDesc: false,
         sortDirection: 'asc',

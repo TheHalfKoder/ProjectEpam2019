@@ -1,5 +1,5 @@
 <template>
-    <form class="app-signin">
+    <form class="app-signin" @submit.prevent='signIn'>
         <h3>Sign in to Rank Manager</h3>
         <p>
             <input class="app-form-input" type="text" placeholder="E-mail" v-model="email">
@@ -8,7 +8,7 @@
             <input class="app-form-input" type="password" placeholder="Password" v-model="password">
         </p>
         <p>
-            <button class="app-btn app-btn--success" type="submit" @click="login">Sign In</button>
+            <button class="app-btn app-btn--success" type="submit">Sign In</button>
         </p>
         <p>
             New in Rank Manager?
@@ -18,26 +18,29 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import database from './../main.js';
 
 export default {
     name: "SignIn",
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            error: ''
         }
     },
     methods: {
-        login: function() {
-            firebase.auth().signInWithEmailAndPassword(this.email, this.password).then(
-                (user) => {
-                    this.$router.replace('profile')
-                },
-                (err) => {
-                    alert('Oops. ' + err.message)
-                }
-            );
+        async signIn () {
+            let result = await database.signIn(this.email, this.password)
+
+            if(result.message){
+                this.error = this.message
+            }
+            else {
+                console.log('User is signed in');
+
+                this.$router.push('/home')
+            }
         }
     }
 }

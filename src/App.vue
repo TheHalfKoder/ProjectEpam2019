@@ -28,6 +28,24 @@
 </script>
 
 <style lang="scss">
+    .card .card-body {
+        padding: 0;
+    }
+
+    .container-fluid .row {
+        margin-bottom: 20px;
+    }
+    .col .input-group .form-control {
+        border-radius: 50px 0 0 50px;
+    }
+
+    .col .input-group .btn {
+        border-radius: 0 50px 50px 0;
+    }
+
+    .app-tabs .card {
+        border: none;
+    }
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -53,4 +71,89 @@
         display: flex;
         flex-direction: column;
     }
+
+    .modal-open .modal {
+        z-index: 1072;
+    }
+
+    .modal .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.3);
+        border: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+        .form-row .col-sm-3 {
+           display: none;
+       }
+
+       .modal-open .modal {
+            z-index: 1072;
+        }
+
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1200px) {
+        .form-row .col-sm-3 {
+           display: none;
+       }
+
+       .modal-open .modal {
+            z-index: 1072;
+        }
+
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+    }
+
+    @media screen and (min-width: 420px) and (max-width: 768px) {
+        .app-content {
+            margin-top: 30px;
+        }
+
+        .form-row .col-sm-3 {
+           display: none;
+       }
+
+       .modal-open .modal {
+            z-index: 1072;
+        }
+
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+    }
+
+   @media screen and (max-width: 420px) {
+       .app-content .app-employee {
+           width: 90%;
+       }
+
+       .app-content {
+           margin-top: 80px;
+       }
+
+       .form-row .col-sm-3 {
+           display: none;
+       }
+
+       .tabs .col-auto {
+           width: 100%;
+       }
+
+       .modal-open .modal {
+            z-index: 1072;
+        }
+
+        .modal-backdrop {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: none;
+        }
+   }
 </style>

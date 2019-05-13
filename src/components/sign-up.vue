@@ -1,5 +1,5 @@
 <template>
-    <form class="app-signup">
+    <form class="app-signup" @submit.prevent='signUp'>
         <h3>Create your personal account</h3>
         <p>
             <input class="app-form-input" type="text" placeholder="E-mail" v-model="email">
@@ -8,7 +8,7 @@
             <input class = "app-form-input" type="password" placeholder="Password" v-model="password">
         </p>
         <p>
-            <button class="app-btn app-btn--success" type="submit" @click="signup">Sign Up</button>
+            <button class="app-btn app-btn--success" type="submit">Sign Up</button>
         </p>
         <p>
             Already have the account?
@@ -18,24 +18,29 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import database from './../main.js';
 
 export default {
     name: "SignUp",
     data() {
         return {
             email: '',
-            password: ''
+            password: '',
+            error: ''
         }
     },
     methods: {
-        signup: function() {
-            firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
-                this.$router.replace('home'), 
-                (err) => {
-                    alert('Oops. ' + err.message)
-                }
-            );
+        async signUp () {
+            let result = await database.signUp(this.email, this.password)
+
+            if(result.message){
+                this.error = this.message
+            }
+            else {
+                console.log('User is created');
+
+                this.$router.push('/profile');
+            }
         }
     }
 }

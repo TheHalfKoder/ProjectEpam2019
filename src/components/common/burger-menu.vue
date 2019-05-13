@@ -4,8 +4,9 @@
       <ul class="app-burger-menu">
         <li v-for="(item, key) in menuItems"
           :key="key"
-          class="app-burger-menu-item">
-          <a href="#" class="app-burger-menu-item-link">{{item}}</a>
+          class="app-burger-menu-item"
+          @click="reloadPage">
+          <router-link href="#" class="app-burger-menu-item-link" :to="item.to">{{item.text}}</router-link>
         </li>
       </ul>
     </div>
@@ -24,16 +25,27 @@ export default {
     return {
       isOpened: false,
       menuItems: [
-        "Home",
-        "Profile",
-        "Employee",
-        "Contacts"
+        {
+          text: "Home", to: "/"
+        },
+        {
+          text: "Profile", to: '/profile'
+        },
+        {
+          text: "Employee", to: "/employee"
+        },
+        {
+          text: "Contacts", to: "/contacts"
+        }
       ]
     };
   },
   methods: {
     onMenuClick() {
       this.isOpened = !this.isOpened;
+    },
+    reloadPage() {
+      window.location.reload();
     }
   }
 }
@@ -50,40 +62,37 @@ export default {
 
   .app-burger-menu-button {
     position: absolute;
-    right: 10%;
-    top: 20px;
+    right: 15%;
+    top: -30px;
   }
 
   .app-burger-menu {
     list-style: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1.5em;
-    margin: auto;
+    font-size: 1em;
   }
 
   .app-burger-menu-item {
     text-align: center;
-    margin-top: 35%;
+    margin-top: 20%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5em;
   }
 
   .app-burger-menu-link {
+    position: relative;
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #959595;
     border-radius: 25px;
-    margin-left: 70%;
-    margin-top: 5%;
-    position: relative;
+    left: 100%;
   }
 
   .app-burger-menu-line, .app-burger-menu-line::after, .app-burger-menu-line::before {
     display: block;
     width: 30px;
     height: 2px;
-    background-color: #fafafa;
+    background-color: #000;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -119,31 +128,81 @@ export default {
   .app-burger-menu-wrapper {
     visibility: hidden;
     opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 90vh;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .app-burger-menu-wrapper.app-burger-menu--active {
     visibility: visible;
     opacity: 1;
-  }
-
-  .app-burger-menu-wrapper {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    background-color: #959595;
-    display: flex;
+    margin-top: 30px;
   }
 
   .app-burger-menu-item-link{
     text-decoration: none; 
-    color: #fafafa;
+    color: #333;
     cursor: pointer;
   }
 
   .app-burger-menu-item-link:hover {
-    color: #000;
+    color: #01afb0;
     transition: 0.5s;
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
+    .app-burger-menu-button {
+      margin-right: 10%;
+    }
+
+    .app-burger-menu-item {
+      margin-top: 0;
+    }
+
+    .app-burger-menu-item {
+      font-size: 2em;
+    }
+
+    .app-burger-menu {
+      width: 100%;
+      margin: 0;
+      margin-right: 20px;
+    }
+  }
+
+  @media only screen and (min-width: 420px) and (max-width: 768px) {
+    .app-burger-menu-button {
+      right: 55%;
+    }
+
+    .app-burger-menu-item {
+      margin-top: 10%;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .app-burger-menu-button {
+      margin-right: 10%;
+    }
+
+    .app-burger-menu-item {
+      margin-top: 0;
+    }
+
+    .app-burger-menu-item {
+      font-size: 1.5em;
+    }
+
+    .app-burger-menu {
+      width: 100%;
+      margin: 0;
+      margin-right: 20px;
+    }
   }
 
 </style>

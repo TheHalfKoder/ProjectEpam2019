@@ -22,7 +22,7 @@
 			return {
 				iconsMenu: [
 					{
-						src: 'https://img.icons8.com/metro/26/000000/facebook.png',
+						src: 'https://img.icons8.com/metro/52/000000/facebook.png',
 						alt: 'Facebook',
 						name: 'fb_share',
 						href: 'http://www.facebook.com/sharer.php?u=http://localhost:8080',

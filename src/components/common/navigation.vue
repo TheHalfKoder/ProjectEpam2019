@@ -65,4 +65,19 @@ export default {
   .router-link-active {
     color: #F38524;
   }
+
+  @media screen and (min-width: 1200px) {
+    .app-navigation {
+      width: 500px;
+      height: 70px;
+    }
+
+    .app-navigation-wrapper {
+      width: 100%;
+    }
+
+    .app-navigation-item {
+      font-size: 1.5em;
+    }
+  }
 </style>

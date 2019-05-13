@@ -5,7 +5,7 @@
     <section class="app-contacts-map-wrapper">
       <p class="app-contacts-map-paragraph">Find us</p>
       <div class="app-map-wrapper">
-        <google-map key111="AIzaSyBQnEOhZMd6BpSMRV13246gEDdI75gKBLc"></google-map>
+        <google-map key111="AIzaSyBQnEOhZMd6BpSMRV13246gEDdI75gKBLc" ></google-map>
       </div>
     </section>
   </div>
@@ -60,4 +60,11 @@
   .app-map-wrapper {
     height: 400px;
   }
+
+  @media only screen and (min-height: 1000px) {
+    .google-map {
+      height: 800px;
+    }
+  }
+
 </style>
