@@ -128,6 +128,10 @@
             background-color: rgba(0, 0, 0, 0.3);
             border: none;
         }
+	
+	.app-employee .container-fluid {
+            margin-bottom: 30px;
+        }
     }
 
    @media screen and (max-width: 420px) {
@@ -154,6 +158,14 @@
         .modal-backdrop {
             background-color: rgba(0, 0, 0, 0.3);
             border: none;
+        }
+	
+	.app-employee .container-fluid {
+            margin-bottom: 90px;
+        }
+
+        .row .my-1 {
+            margin: 0 auto;
         }
    }
 </style>
