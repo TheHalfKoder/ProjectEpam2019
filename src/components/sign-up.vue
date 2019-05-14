@@ -8,6 +8,9 @@
             <input class = "app-form-input" type="password" placeholder="Password" v-model="password">
         </p>
         <p>
+            <input class = "app-form-input" type="password" placeholder="Confirm Password" v-model="confirmpassword">
+        </p>
+        <p>
             <button class="app-btn app-btn--success" type="submit">Sign Up</button>
         </p>
         <p>
@@ -26,21 +29,27 @@ export default {
         return {
             email: '',
             password: '',
+            confirmpassword: '',
             error: ''
         }
     },
     methods: {
         async signUp () {
-            let result = await database.signUp(this.email, this.password)
+            if(this.password == this.confirmpassword){
+                let result = await database.signUp(this.email, this.password)
 
-            if(result.message){
-                this.error = this.message
-            }
-            else {
-                console.log('User is created');
+                if(result.message){
+                    this.error = this.message
+                }
+                else {
+                    console.log('User is created');
 
-                this.$router.push('/profile');
+                    this.$router.push('/profile');
+                }   
+            }else {
+                alert("Your passwords is not match up! Try again.");
             }
+            
         }
     }
 }
