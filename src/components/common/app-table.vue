@@ -34,7 +34,29 @@
           {{ row.value.first }} {{ row.value.last }}
         </button>
         <b-modal v-model="modalShow">
-          <p>Skills</p>
+          <div>
+            <p class="app-table-skills">
+              <span>HTML</span><meter value="90" max="100" low="0"></meter>
+            </p>
+            <p class="app-table-skills">
+              <span>CSS</span><meter value="95" max="100" low="0"></meter>
+            </p>
+            <p class="app-table-skills">
+              <span>JavaScipt</span><meter value="70" max="100" low="0"></meter>
+            </p>
+            <p class="app-table-skills">
+              <span>Vue JS</span><meter value="80" max="100" low="0"></meter>
+            </p>
+            <p class="app-table-skills">
+              <span>SQL</span><meter value="78" max="100" low="0"></meter>
+            </p>
+            <p class="app-table-skills">
+              <span>C/C++</span><meter value="60" max="100" low="0"></meter>
+            </p>
+            <p class="app-table-skills">
+              <span>Node JS</span><meter value="40" max="100" low="0"></meter>
+            </p>
+          </div>
         </b-modal>
       </template>
 
@@ -72,159 +94,159 @@ import { parse } from 'querystring';
         modalShow: false,
         items: [
           { 
-            dateBirth: '15.10.1997', name: { first: 'Dickerson', last: 'Macdonald' }, position: 'Middle',
+            dateBirth: '08.24.1997', name: { first: 'Dickerson', last: 'Macdonald' }, position: 'Middle .NET',
             phone: '+38(093)8467812'
           },
           { 
-            dateBirth: '01.06.1987', name: { first: 'Larsen', last: 'Shaw' }, position: 'Junior',
+            dateBirth: '01.06.1987', name: { first: 'Larsen', last: 'Shaw' }, position: 'Junior Frontend',
             phone: '+38(098)7190123'
           },
           { 
-            dateBirth: '09.04.1973', name: { first: 'Geneva', last: 'Wilson' }, position: 'Middle',
+            dateBirth: '09.27.1973', name: { first: 'Geneva', last: 'Wilson' }, position: 'Middle Java',
             phone: '+38(077)8767011'
           },
           { 
-            dateBirth: '26.12.1988', name: { first: 'Jami', last: 'Carney' }, position: 'Middle',
+            dateBirth: '02.12.1988', name: { first: 'Jami', last: 'Carney' }, position: 'Middle Android',
             phone: '+38(066)9012345'
           },
           { 
-            dateBirth: '19.09.1993', name: { first: 'Essie', last: 'Dunlap' }, position: 'Junior',
+            dateBirth: '06.09.1993', name: { first: 'Essie', last: 'Dunlap' }, position: 'Junior C++/Qt',
             phone: '+38(066)8461812'
           },
           { 
-            dateBirth: '30.06.1969', name: { first: 'Thor', last: 'Macdonald' }, position: 'Team Lead',
+            dateBirth: '04.06.1969', name: { first: 'Thor', last: 'Macdonald' }, position: 'Team Lead C/C++ (Android/Linux)',
             phone: '+38(067)9016745'
           },
           { 
-            dateBirth: '13.12.1999', name: { first: 'Mitzi', last: 'Navarro' }, position: 'Trainee',
+            dateBirth: '02.12.1999', name: { first: 'Mitzi', last: 'Navarro' }, position: 'Trainee C#',
             phone: '+38(093)8901812'
           },
           { 
-            dateBirth: '10.03.1996', name: { first: 'Genevieve', last: 'Wilson' }, position: 'Trainee',
+            dateBirth: '10.03.1996', name: { first: 'Genevieve', last: 'Wilson' }, position: 'Trainee React Developer',
             phone: '+38(044)1234412'
           },
           { 
-            dateBirth: '24.08.1980', name: { first: 'John', last: 'Carney' }, position: 'Middle',
+            dateBirth: '12.08.1980', name: { first: 'John', last: 'Carney' }, position: 'Middle Frontend',
             phone: '+38(093)8461252'
           },
           { 
-            dateBirth: '10.10.1979', name: { first: 'Dick', last: 'Dunlap' }, position: 'Middle',
+            dateBirth: '10.10.1979', name: { first: 'Dick', last: 'Dunlap' }, position: 'Middle Frontend',
             phone: '+38(093)6577812'
           },
           {
-            dateBirth: '05.08.1990', name: { first: 'Brad', last: 'Pitt' }, position: 'Senior',
+            dateBirth: '05.08.1990', name: { first: 'Brad', last: 'Pitt' }, position: 'Senior Frontend',
             phone: '+38(050)7788342'
           },
           {
-            dateBirth: '07.12.1984', name: { first: 'Michaella', last: 'Praston'}, position: 'Trainee',
+            dateBirth: '07.12.1984', name: { first: 'Michaella', last: 'Praston'}, position: 'Trainee Java',
             phone: '+38(093)1000349'
           },
           { 
-            dateBirth: '28.09.1988', name: { first: 'Pamella', last: 'Stockwort' }, position: 'Senior',
+            dateBirth: '03.09.1988', name: { first: 'Pamella', last: 'Stockwort' }, position: 'Senior Ruby',
             phone: '+38(066)8417812'
           },
           {
-            dateBirth: '01.11.1997', name: { first: 'Brandon', last: 'Bower' }, position: 'Middle',
+            dateBirth: '01.11.1997', name: { first: 'Brandon', last: 'Bower' }, position: 'Middle Ruby',
             phone: '+38(095)0912345'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Brown'}, position: 'Senior',
+            dateBirth: '06.02.1993', name: { first: 'Ahata', last: 'Brown'}, position: 'Senior Java',
             phone: '+38(068)9123761'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '09.07.1984', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead .Net',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '05.06.1983', name: { first: 'Sergey', last: 'Porik'}, position: 'Team Lead NodeJS',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '03.10.1997', name: { first: 'Alisa', last: 'Valevko'}, position: 'Junior C/C++',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '10.14.1996', name: { first: 'Abraham', last: 'Gerz'}, position: 'Junior C#',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '10.05.1994', name: { first: 'Dmitry', last: 'Kiselev'}, position: 'Middle IOS',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '10.29.1989', name: { first: 'Daniel', last: 'Fedorenko'}, position: 'Senior Java',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '01.10.1998', name: { first: 'Alex', last: 'Gunt'}, position: 'Trainee Frontend',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '12.03.1986', name: { first: 'Derek', last: 'Born'}, position: 'Team Lead C/C++ Linux',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '10.10.1995', name: { first: 'Brandon', last: 'Stark'}, position: 'Middle Frontend',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '05.30.1989', name: { first: 'Sara', last: 'Miller'}, position: 'Senior .Net',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '07.01.1992', name: { first: 'Gregor', last: 'Kligan'}, position: 'Senior Frontend',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '06.22.1987', name: { first: 'Sandor', last: 'Jeferson'}, position: 'Team Lead .Net',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '09.11.1997', name: { first: 'Meverik', last: 'Klark'}, position: 'Trainee .Net',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '05.13.1983', name: { first: 'Jhon', last: 'Portyg'}, position: 'Team Lead Android',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '12.18.1989', name: { first: 'Antony', last: 'Strek'}, position: 'Team Lead Android',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '05.22.1993', name: { first: 'Sergey', last: 'Funtov'}, position: 'Senior C#',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '03.24.1992', name: { first: 'Ahata', last: 'Sammers'}, position: 'Senior .Net',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '07.12.1989', name: { first: 'Fill', last: 'Vertigo'}, position: 'Team Lead Frontend',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '06.02.1989', name: { first: 'Fiona', last: 'Grunt'}, position: 'Team Lead Java',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '07.20.1993', name: { first: 'Teon', last: 'Stroke'}, position: 'Middle NodeJs',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '11.06.1985', name: { first: 'Maria', last: 'Abramova'}, position: 'Team Lead VueJs Developer',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '12.19.1988', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '09.02.1996', name: { first: 'Bob', last: 'Vest'}, position: 'Middle .Net',
             phone: '+38(068)9123768'
           },
           {
-            dateBirth: '27.02.1993', name: { first: 'Ahata', last: 'Gunt'}, position: 'Team Lead',
+            dateBirth: '02.23.1998', name: { first: 'Yanka', last: 'Gunt'}, position: 'Trainee Angular 2+ Developer',
             phone: '+38(068)9123768'
           }
         ],
@@ -278,5 +300,8 @@ import { parse } from 'querystring';
 </script>
 
 <style scoped>
-
+  .app-table-skills {
+    display: flex;
+    justify-content: space-between;
+  }
 </style>
